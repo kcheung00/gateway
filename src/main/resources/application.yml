@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: my_api_gateway
+---
+server:
+  port: 9011
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:my_api_gateway.jks
+    key-store-password: my_api_gateway
+    key-alias: my_api_gateway
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:my_api_gateway.jks
+    trust-store-password: my_api_gateway
+    trust-store-type: JKS
+---
+endpoint:
+  ms1-service: https://localhost:9022/ms1/data
+  ms2-service: https://localhost:9033/ms2/data
+  ms2-greeting: https://localhost:9033/ms2/greeting
+  ms2-sendmsg: https://localhost:9033/ms2/sendmsg

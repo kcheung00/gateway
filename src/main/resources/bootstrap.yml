@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: my_api_gateway
+---
+server:
+  port: 9011
